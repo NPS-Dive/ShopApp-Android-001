@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.shopapp.model.AccountModel" />
+
+        <variable
+            name="listener"
+            type="com.example.shopapp.view.AccountFragment.AccountFragmentListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding8dp">
+
+            <ImageView
+                android:id="@+id/fragment_account_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height200dp"
+                android:src="@drawable/baseline_person_outline_24"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/userInfo"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize18sp"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_username_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_image" />
+
+            <LinearLayout
+                android:id="@+id/fragment_account_username_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_number_linear_layout"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:layout_editor_absoluteX="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/username"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/fragment_account_username"
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start"
+                    android:text="@{model.name}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_account_number_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_address_linear_layout"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_username_layout"
+                tools:layout_editor_absoluteX="9dp">
+
+                <TextView
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/cellPhoneNUM"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/fragment_account_number"
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start"
+                    android:text="@{model.number}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_account_replacementNumber_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_changeInfo_BTN"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_zipcode_linear_layout"
+                tools:layout_editor_absoluteX="97dp">
+
+                <TextView
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/replacementNumber"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/fragment_account_replacementNumber"
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start"
+                    android:text="@{model.replacementNumber}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_account_address_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_zipcode_linear_layout"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_number_linear_layout"
+                tools:layout_editor_absoluteX="9dp">
+
+                <TextView
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/address"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/fragment_account_address"
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start"
+                    android:text="@{model.address}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_account_zipcode_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_replacementNumber_layout"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_address_linear_layout"
+                tools:layout_editor_absoluteX="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/zipcode"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/fragment_account_zipcode"
+                    android:layout_width="@dimen/width0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start"
+                    android:text="@{model.postalcode}" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/fragment_account_changeInfo_BTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:onClick="@{(view)-> listener.changeBTNListener(view, model)}"
+                android:text="@string/changeInfo"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_account_shopHistory_BTN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_replacementNumber_layout" />
+
+            <Button
+                android:id="@+id/fragment_account_shopHistory_BTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/shopHistory"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_changeInfo_BTN"
+                android:onClick="@{listener::goToPaysDetailsFragment}"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

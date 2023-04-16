@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">برنامه فروشگاه IPBSES</string>
+    <string name="cellPhoneNUM">شماره موبایل</string>
+    <string name="password">رمز عبور</string>
+    <string name="enterBTN">ورود</string>
+    <string name="NoAccount_register">هنوز حسابی ندارید؟ لطفاً ثبت نام بفرمایید</string>
+    <string name="username">نام کاربری:</string>
+    <string name="registerBTN">ثبت نام</string>
+    <string name="registeredBefore">پیشتر ثبت نام نموده اید؟ لطفاً وارد شوید</string>
+    <string name="home">خانه</string>
+    <string name="account">حساب کاربری</string>
+    <string name="cart">سبد خرید</string>
+    <string name="addToCart">افزودن به سبد خرید</string>
+    <string name="price">بها:</string>
+    <string name="userInfo">مشخصات کاربر</string>
+    <string name="address">آدرس:</string>
+    <string name="zipcode">کدپستی:</string>
+    <string name="replacementNumber">شماره جایگزین:</string>
+    <string name="changeInfo">دگرگونی مشخصات</string>
+    <string name="shopHistory">سوابق خرید</string>
+    <string name="changeInfoDescription">برای تغییر هر بخش، لازم است آن را به صورت مطمح نظر تکمیل نموده و پس از درج رمز فعلی دکمه ثبت را بفشارید</string>
+    <string name="newPassword">رمز عبور نو:</string>
+    <string name="currentPassword">رمز عبور فعلی:</string>
+    <string name="register">ثبت</string>
+    <string name="notConnected">ارتباط برقرار نشد!</string>
+    <string name="passwordIncorrect">رمز نادرستی وارد شده است!</string>
+    <string name="operationUnseccessful">پردازش ناموفق بود!</string>
+    <string name="changedSuccessfullyMade">تغییرات با موفقیت صورت پذیرفتند!</string>
+    <string name="totalPrice">هزینه نهایی:</string>
+    <string name="finalizeShopping">کامل نمودن فرآیند خرید</string>
+    <string name="count">تعداد:</string>
+    <string name="refID">شماره پیگیری:</string>
+    <string name="fee">هزینه:</string>
+    <string name="purchaseDate">تاریخ خرید:</string>
+</resources>

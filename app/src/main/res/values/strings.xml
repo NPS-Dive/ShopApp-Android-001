@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ShopApp IPBSES</string>
+    <string name="cellPhoneNUM">Cell Phone Number</string>
+    <string name="password">Password</string>
+    <string name="enterBTN">Enter</string>
+    <string name="NoAccount_register">No Account Yet? Register!</string>
+    <string name="username">Username: </string>
+    <string name="registerBTN">Register</string>
+    <string name="registeredBefore">Registered Already? Go to Sign-in Page</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="cart">Cart</string>
+    <string name="addToCart">Add to Cart</string>
+    <string name="price">Price:</string>
+    <string name="userInfo">User Information</string>
+    <string name="address">Address:</string>
+    <string name="zipcode">Zipcode:</string>
+    <string name="replacementNumber">Replacement Number:</string>
+    <string name="changeInfo">Change Information</string>
+    <string name="shopHistory">Shopping History</string>
+    <string name="changeInfoDescription">To change each field, just fill it as you desire, then enter your current password and click REGISTER button</string>
+    <string name="newPassword">New Password</string>
+    <string name="currentPassword">Current password</string>
+    <string name="register">Register</string>
+    <string name="notConnected">Not Connected!</string>
+    <string name="passwordIncorrect">You have Entered WRONG password</string>
+    <string name="operationUnseccessful">Operation Underdressed</string>
+    <string name="changedSuccessfullyMade">Changes have been successfully made!</string>
+    <string name="totalPrice">Total Price:</string>
+    <string name="currencyUnit" translatable="false">USDT</string>
+    <string name="finalizeShopping">Finalize Shopping</string>
+    <string name="count">Count:</string>
+    <string name="refID">Reference ID:</string>
+    <string name="fee">Fee:</string>
+    <string name="purchaseDate">Purchase Date</string>
+
+</resources>

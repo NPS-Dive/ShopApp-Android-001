@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main_host"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.shopapp.view.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_postsItemClickFragment"
+            app:destination="@id/postsItemClickFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.shopapp.view.AccountFragment"
+        android:label="AccountFragment" >
+        <action
+            android:id="@+id/action_accountFragment_to_changeDetailsFragment"
+            app:destination="@id/changeDetailsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_paysDetailFragment"
+            app:destination="@id/paysDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.shopapp.view.CartFragment"
+        android:label="CartFragment" />
+    <fragment
+        android:id="@+id/postsItemClickFragment"
+        android:name="com.example.shopapp.view.PostsItemClickFragment"
+        android:label="PostsItemClickFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeDetailsFragment"
+        android:name="com.example.shopapp.view.ChangeDetailsFragment"
+        android:label="ChangeDetailsFragment" >
+        <argument
+            android:name="parameters"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/paysDetailFragment"
+        android:name="com.example.shopapp.view.PaysDetailFragment"
+        android:label="PaysDetailFragment" />
+</navigation>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.shopapp.model.AccountModel" />
+        <variable
+            name="viewModel"
+            type="com.example.shopapp.viewmodel.MainActivityViewModel" />
+        <variable
+            name="listener"
+            type="com.example.shopapp.view.ChangeDetailsFragment.ChangeDetailsFragmentListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding4dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/padding8dp"
+                android:text="@string/changeInfoDescription"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/txtInputLayout_username"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="8dp" />
+
+
+            <TextView
+                android:id="@+id/change_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/username"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/change_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/address"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/change_name" />
+
+            <TextView
+                android:id="@+id/change_zipcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/zipcode"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/change_address" />
+
+            <TextView
+                android:id="@+id/change_replacementNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/replacementNumber"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/change_zipcode" />
+
+            <TextView
+                android:id="@+id/newPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/newPassword"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/change_replacementNumber" />
+
+            <TextView
+                android:id="@+id/currentPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/currentPassword"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newPassword" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/change_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/change_name"
+                app:layout_constraintTop_toTopOf="@+id/change_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@{model.name}"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_zipcode"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/change_zipcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/change_zipcode"
+                app:layout_constraintTop_toTopOf="@+id/change_zipcode">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_zipcode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp"  android:text="@{model.postalcode}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_address"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/change_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/change_address"
+                app:layout_constraintTop_toTopOf="@+id/change_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_address"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp" android:text="@{model.address}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_replacementNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/change_replacementNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/change_replacementNumber"
+                app:layout_constraintTop_toTopOf="@+id/change_replacementNumber">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_replacementNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@{model.replacementNumber}"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_newPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/newPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/newPassword"
+                app:layout_constraintTop_toTopOf="@+id/newPassword">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_newPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp"
+                    android:text="@{model.newPassword}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout_currentPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/currentPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/currentPassword"
+                app:layout_constraintTop_toTopOf="@+id/currentPassword">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/change_detail_input_currentPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="83dp"
+                    tools:layout_editor_absoluteY="16dp"
+                    android:text="@{model.password}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/change_detail_submitBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/register"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputLayout_currentPassword"
+               android:onClick="@{(view)->listener.changeSubmitBTNListener(view, model, viewModel) }" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
